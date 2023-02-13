@@ -1,0 +1,162 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color:black;
+}
+
+.base-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+nav{
+    border-radius: 0px 40px 40px 0px;
+    width: 400px;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    color: white;
+    margin: 1rem auto;
+    position: relative;
+}
+
+nav > h1{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+span{
+    color: #FFD702;
+}
+
+main{
+    width: 80vw;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    width: 100%;
+    border: none;
+    background-color: black;
+    color: white;
+    line-height: 2.5rem;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-align: left;
+}
+button img{
+    padding-right: 20px;
+}
+.logout{
+
+}
+
+ul{
+    list-style-type: none;
+    text-align: left;
+    margin: 2rem;
+    padding: 0;
+    /*position: relative;*/
+}
+
+.new-transaction button{
+    justify-content: center;
+    background-color: #FFD702;
+    color: black;
+    text-align: center;
+}
+nav li:last-child button{
+    margin-bottom: 25px;
+    position: absolute;
+    bottom: 0;
+    width:80%;
+
+}
+
+li i{
+    font-size: 1.5rem;
+    margin-right: 1vw;
+}
+
+main{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 12.5% 30% 60%;
+    grid-template-areas:
+    "powitanie powitanie"
+    "budzet stonks"
+    "transakcje stonks";
+}
+main h1{
+    margin: 0 2rem;
+    align-self: center;
+    font-size: 4rem;
+    grid-area: powitanie;
+}
+
+.budget{
+    margin: 1rem 2rem;
+    grid-area: budzet;
+    color: white;
+    background-color: black;
+    border-radius: 50px;
+    padding: 10px 50px;
+    display: grid;
+    align-items: center;
+}
+
+.budget h2{
+    margin: 0;
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+}
+.budget p{
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.income{
+    color: limegreen;
+}
+
+.expenses{
+    color: red;
+}
+
+.transactions{
+    padding: 0 50px;
+    height: 80%;
+    margin: 2.5rem 2rem;
+    grid-area: transakcje;
+    border: 8px solid black;
+    border-radius: 50px;
+}
+.last-transactions{
+    text-align: center;
+    font-size: 2rem;
+    margin: 0.5rem;
+    border-bottom: solid 5px black;
+}
+
+.transactions ul{
+    overflow: auto;
+    height: 75%;
+    margin: 2rem 0 0 2rem;
+    line-height: 2rem;
+}
+
+main img{
+    grid-area: stonks;
+    justify-self: center;
+    margin-top: 5rem;
+}
