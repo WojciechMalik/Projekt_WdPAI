@@ -9,5 +9,5 @@ Routing::get('login', 'DefaultController');
 Routing::get('dashboard', 'DefaultController');
 Routing::get('statistics', 'DefaultController');
 Routing::get('navigation', 'DefaultController');
-
+Routing::get('limits', 'DefaultController');
 Routing::run($path);

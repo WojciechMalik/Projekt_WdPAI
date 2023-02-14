@@ -14,4 +14,7 @@ class DefaultController extends AppController {
     public function navigation(){
         $this->render('navigation');
     }
+    public function limits(){
+        $this->render('limits');
+    }
 }
