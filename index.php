@@ -7,11 +7,13 @@ $path = parse_url( $path, PHP_URL_PATH);
 
 Router::get('', 'DefaultController');
 Router::get('dashboard', 'DefaultController');
-
-Router::post('login', 'SecurityController');
-
 Router::get('statistics', 'DefaultController');
 Router::get('limits', 'DefaultController');
 Router::get('newtransaction', 'DefaultController');
 Router::get('registration', 'DefaultController');
+
+Router::post('login', 'SecurityController');
+
+
+
 Router::run($path);
