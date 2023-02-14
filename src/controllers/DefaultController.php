@@ -11,10 +11,10 @@ class DefaultController extends AppController {
     public function statistics(){
         $this->render('statistics');
     }
-    public function navigation(){
-        $this->render('navigation');
-    }
     public function limits(){
         $this->render('limits');
+    }
+    public function newtransaction(){
+        $this->render('newtransaction');
     }
 }

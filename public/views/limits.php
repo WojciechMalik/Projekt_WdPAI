@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>OnBudget | Statistics</title>
+        <title>OnBudget | Limits</title>
         <link rel="icon" href="public/img/favicon.svg">
         <link rel="stylesheet" type="text/css" href="public/css/limits.css">
         <?php include "header.php" ?>
