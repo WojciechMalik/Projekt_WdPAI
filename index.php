@@ -13,6 +13,7 @@ Router::get('newtransaction', 'DefaultController');
 Router::get('registration', 'DefaultController');
 
 Router::post('login', 'SecurityController');
+Router::post('addTransaction', 'ProjectController');
 
 
 

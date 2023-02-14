@@ -77,12 +77,28 @@ main h1{
 .transactions ul{
     overflow: auto;
     height: 75%;
-    margin: 2rem 0 0 2rem;
-    line-height: 2rem;
+    margin: 2rem ;
+    line-height: 1rem;
 }
 
 main img{
     grid-area: stonks;
     justify-self: center;
     margin-top: 5rem;
+}
+
+
+.transaction{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin:0;
+}
+
+.transaction-title{
+    margin:0.5rem 0;
+}
+
+.transaction-amount{
+    margin:0.5rem 0;
 }

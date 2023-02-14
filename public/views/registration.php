@@ -9,9 +9,16 @@
         <div class="container">
             <h1>Welcome to <span><br/>On</span>Budget!</h1>
             <form>
+                <?php
+                if(isset($messages)){
+                    foreach($messages as $message) {
+                        echo $message;
+                    }
+                }
+                ?>
                 <div class="input-container">
                     <img src="public/img/mail-icon.svg" height="20" width="20">
-                    <input name="mail" type="text" placeholder="Mail">
+                    <input name="email" type="text" placeholder="Mail">
                 </div>
                 <div class="input-container">
                     <img src="public/img/password-icon.svg" height="20" width="20">
