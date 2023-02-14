@@ -10,4 +10,5 @@ Routing::get('dashboard', 'DefaultController');
 Routing::get('statistics', 'DefaultController');
 Routing::get('limits', 'DefaultController');
 Routing::get('newtransaction', 'DefaultController');
+Routing::get('registration', 'DefaultController');
 Routing::run($path);

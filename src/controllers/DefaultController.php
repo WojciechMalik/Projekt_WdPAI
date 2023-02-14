@@ -17,4 +17,7 @@ class DefaultController extends AppController {
     public function newtransaction(){
         $this->render('newtransaction');
     }
+    public function registration(){
+        $this->render('registration');
+    }
 }

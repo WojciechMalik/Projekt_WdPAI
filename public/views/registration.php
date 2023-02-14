@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>OnBudget | Sign Up</title>
+        <title>OnBudget | Login</title>
         <link rel="stylesheet" type="text/css" href="public/css/style.css">
         <?php include "header.php" ?>
     </head>
@@ -17,10 +17,13 @@
                     <img src="public/img/password-icon.svg" height="20" width="20">
                     <input name="password" type="password" placeholder="Password">
                 </div>
-                
-                <button>Login</button>
+                <div class="input-container">
+                    <img src="public/img/mail-icon.svg" height="20" width="20">
+                    <input name="username" type="text" placeholder="Mail">
+                </div>
+                <button>Submit</button>
             </form>
-            <p>Don't have an account? <a href="#">Sign Up</a></p>
+            <p>Already have an account? <a href="#">Login</a></p>
         </div>
     </body>
 </html>
