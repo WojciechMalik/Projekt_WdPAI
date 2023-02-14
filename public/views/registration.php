@@ -10,16 +10,20 @@
             <h1>Welcome to <span><br/>On</span>Budget!</h1>
             <form>
                 <div class="input-container">
-                    <img src="public/img/username-icon.svg" height="20" width="20">
-                    <input name="username" type="text" placeholder="Username">
+                    <img src="public/img/mail-icon.svg" height="20" width="20">
+                    <input name="mail" type="text" placeholder="Mail">
                 </div>
                 <div class="input-container">
                     <img src="public/img/password-icon.svg" height="20" width="20">
                     <input name="password" type="password" placeholder="Password">
                 </div>
                 <div class="input-container">
-                    <img src="public/img/mail-icon.svg" height="20" width="20">
-                    <input name="username" type="text" placeholder="Mail">
+                    <img src="public/img/username-icon.svg" height="20" width="20">
+                    <input name="name" type="text" placeholder="Name">
+                </div>
+                <div class="input-container">
+                    <img src="public/img/username-icon.svg" height="20" width="20">
+                    <input name="surname" type="text" placeholder="Surname">
                 </div>
                 <button>Submit</button>
             </form>
