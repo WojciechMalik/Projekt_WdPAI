@@ -1,0 +1,80 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color:black;
+}
+
+.base-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+main {
+    width: 76vw;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 12.5% 12.5% 10% 10% 10% 10% 35%;
+    align-items: center;
+    margin: 0 2vw;
+}
+
+main h1{
+
+    align-self: center;
+    font-size: 4rem;
+    grid-area: 1 / 1 / 2 / 4;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+#h1{
+    grid-area: 2/1/3/2;
+}
+
+#h2{
+    grid-area: 2/2/3/4;
+}
+
+name{
+    grid-column: 1/2;
+}
+progress-c{
+    grid-column: 2/3;
+}
+percentage{
+    grid-column: 3/4;
+}
+
+food{
+    grid-row: 3/4;
+    align-self: center;
+}
+
+entertainment{
+    grid-row: 4/5;
+}
+
+education{
+    grid-row: 5/6;
+}
+
+transport{
+    grid-row:6/7;
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+meter{
+    height: 1rem;
+    width:80%;
+    height: 40%;
+
+}

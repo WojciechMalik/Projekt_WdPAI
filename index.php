@@ -7,5 +7,7 @@ $path = parse_url( $path, PHP_URL_PATH);
 
 Routing::get('login', 'DefaultController');
 Routing::get('dashboard', 'DefaultController');
+Routing::get('statistics', 'DefaultController');
+Routing::get('navigation', 'DefaultController');
 
 Routing::run($path);

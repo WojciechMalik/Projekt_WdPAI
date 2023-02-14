@@ -13,6 +13,7 @@ body{
 }
 
 main{
+    width: 80vw;
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -7,9 +7,7 @@
     </head>
     <body>
         <div class="base-container">
-            <nav>
-                <?php include "navigation.php"?>
-            </nav>
+            <?php include "navigation.php"?>
             <main>
                 <h1>Hi Username!</h1>
                 <section class="budget">
