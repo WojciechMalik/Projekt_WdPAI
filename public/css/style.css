@@ -87,6 +87,12 @@ button{
     font-size: 20px;
 }
 
+.no-valid{
+    outline: 3px solid red;
+    border-radius: 1em;
+    box-shadow: 0 0 0.2em red;
+}
+
 @media only screen and (max-device-width: 420px) {
     .container{
         width: 100%;
@@ -118,3 +124,4 @@ button{
         font-size: 25px;
     }
 }
+
