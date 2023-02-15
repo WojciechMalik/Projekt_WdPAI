@@ -5,17 +5,12 @@ class Transaction
     private $title;
     private $amount;
     private $category;
-    private $choice;
 
-    public function __construct($title, $amount, $category, $choice)
+    public function __construct($title, $amount, $category)
     {
         $this->title = $title;
         $this->amount = $amount;
         $this->category = $category;
-        $this->choice = $choice;
-        if($this->choice='Expense'){
-            $this->amount *= -1;
-        }
     }
 
     public function getTitle(){
@@ -36,11 +31,4 @@ class Transaction
     public function setCategory($category){
         $this->category = $category;
     }
-    public function getChoice(){
-        return $this->choice;
-    }
-    public function setChoice($choice){
-        $this->choice = $choice;
-    }
-
 }

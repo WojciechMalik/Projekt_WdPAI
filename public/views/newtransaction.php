@@ -19,13 +19,6 @@
         }
         ?>
         <form action="addTransaction" method="POST">
-            <input type="radio" id="inc" name="choice" value="Income">
-            <label for="income">Income</label><br>
-
-            <input type="radio" id="exp" name="choice" value="Expense">
-            <label for="expense">Expense</label><br>
-            <br>
-
             <label for="category">Categories:</label><br>
 
             <select name="category">
