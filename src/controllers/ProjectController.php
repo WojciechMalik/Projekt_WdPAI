@@ -3,6 +3,7 @@
 require_once 'AppController.php';
 require_once __DIR__ .'/../models/Transaction.php';
 require_once __DIR__.'/../repository/TransactionRepository.php';
+require_once __DIR__.'/../repository/UserRepository.php';
 
 class ProjectController extends AppController
 {
@@ -17,8 +18,9 @@ class ProjectController extends AppController
 
     public function dashboard(){
         $transactions=$this->transactionRepository->getTransactions();
-
-        $this->render('dashboard', ['transactions' =>$transactions]);
+        $userRepository = new UserRepository();
+        $user = $userRepository->getUsername($_COOKIE['id_user']);
+        $this->render('dashboard', ['name'=> $user,'transactions' =>$transactions]);
     }
     public function addTransaction()
     {

@@ -9,7 +9,7 @@
         <div class="base-container">
             <?php include "navigation.php"?>
             <main>
-                <h1>Hi Username!</h1>
+                <h1>Hi <?=$name?>!</h1>
                 <section class="budget">
                     <p>Current Budget:</p>
                     <h2>$1000,00</h2>

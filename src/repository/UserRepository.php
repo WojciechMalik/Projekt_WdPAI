@@ -4,6 +4,18 @@ require_once 'Repository.php';
 require_once __DIR__.'/../models/User.php';
 class UserRepository extends Repository
 {
+
+    public function getUsername(int $id): ?string{
+        $stmt = $this->database->connect()->prepare('
+            SELECT name FROM public.user_details
+            WHERE id_user_details = (SELECT id_user_details FROM public.users WHERE id_user=:id)
+        ');
+
+        $stmt->execute(['id'=>$id]);
+        $username = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $username['name'];
+
+    }
     public function getUser(string $email): ?User{
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM public.users u LEFT JOIN public.user_details ud
