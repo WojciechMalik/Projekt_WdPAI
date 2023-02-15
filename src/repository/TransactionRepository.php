@@ -29,8 +29,8 @@ class TransactionRepository extends Repository
     }
     public function addTransaction(Transaction $transaction): void{
         $stmt=$this->database->connect()->prepare('
-            INSERT INTO transactions (amount, title, id_category)
-            VALUES (?, ?, ?)
+            INSERT INTO transactions (amount, title, id_category, id_user)
+            VALUES (?, ?, ?, ?)
         ');
 
         $pom = $transaction->getCategory();
@@ -52,18 +52,21 @@ class TransactionRepository extends Repository
         $stmt->execute([
             $transaction->getAmount(),
             $transaction->getTitle(),
-            $category_id
+            $category_id,
+            $_COOKIE['id_user']
         ]);
     }
 
     public function getTransactions(): array{
         $result = [];
+        $ciastko = $_COOKIE['id_user'];
         $stmt = $this->database->connect()->prepare('
             SELECT transactions.id_transaction, transactions.title, transactions.amount, categories.name
             FROM transactions
             INNER JOIN categories on categories.id_category = transactions.id_category
+            WHERE transactions.id_user = :ciastko
         ');
-        $stmt->execute();
+        $stmt->execute(['ciastko'=>$ciastko]);
         $transactions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         foreach ($transactions as $transaction){

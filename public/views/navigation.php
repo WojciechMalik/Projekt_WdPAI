@@ -34,7 +34,7 @@
                     </button>
                 </li>
                 <li class="logout">
-                    <button onclick="window.location.href='login';">
+                    <button onclick="window.location.href='logout';">
                         <img src="public/img/logout-icon.svg" alt="logout icon">
                         Logout
                     </button>

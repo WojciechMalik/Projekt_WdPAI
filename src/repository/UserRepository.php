@@ -18,6 +18,8 @@ class UserRepository extends Repository
             return null;
         }
 
+        setcookie('id_user', $user['id_user'], time()+60*60*24);
+
         return new User(
             $user['email'],
             $user['password'],
