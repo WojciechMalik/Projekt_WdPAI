@@ -9,7 +9,7 @@
     <body>
         <div class="container">
             <h1>Welcome to <span><br/>On</span>Budget!</h1>
-            <form>
+            <form action="registration" method="POST">
                 <?php
                 if(isset($messages)){
                     foreach($messages as $message) {
