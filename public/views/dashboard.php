@@ -21,24 +21,14 @@
                 <section class="transactions">
                     <p class="last-transactions">Last transactions</p>
                     <ul>
+                        <?php foreach($transactions as $transaction):?>
                         <li>
                             <div class="transaction">
                                 <p class="transaction-title"><?=$transaction->getTitle() ?></p>
                                 <p class="transaction-amount"><?=$transaction->getAmount() ?>$</p>
                             </div>
                         </li>
-                        <li>
-                            <div class="transaction">
-                                <p class="transaction-title">nazwa2</p>
-                                <p class="transaction-amount">123$</p>
-                            </div>
-                        </li>
-                        <li>a</li>
-                        <li>a</li>
-                        <li>a</li>
-                        <li>a</li>
-                        <li>a</li>
-
+                        <?php endforeach; ?>
                     </ul>
                 </section>
                 <img src="public/img/stonks.jpg" alt="stonks or not stonks">

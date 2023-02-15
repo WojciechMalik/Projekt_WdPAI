@@ -15,6 +15,11 @@ class ProjectController extends AppController
         $this->transactionRepository= new TransactionRepository();
     }
 
+    public function dashboard(){
+        $transactions=$this->transactionRepository->getTransactions();
+
+        $this->render('dashboard', ['transactions' =>$transactions]);
+    }
     public function addTransaction()
     {
         if($this->isPost()){
@@ -22,7 +27,9 @@ class ProjectController extends AppController
             $transaction = new Transaction($_POST['title'], $_POST['amount'], $_POST['category']);
             $this->transactionRepository->addTransaction($transaction);
 
-            return $this->render('dashboard', ['messages'=>$this->messages, 'transaction'=>$transaction]);
+            return $this->render('dashboard', [
+                'transactions'=>$this->transactionRepository->getTransactions(),
+                'messages'=>$this->messages, 'transaction'=>$transaction]);
         }
         $this->render('newtransaction', ['messages'=>$this->messages]);
     }

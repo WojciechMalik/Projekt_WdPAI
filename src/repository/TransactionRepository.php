@@ -54,7 +54,26 @@ class TransactionRepository extends Repository
             $transaction->getTitle(),
             $category_id
         ]);
+    }
 
+    public function getTransactions(): array{
+        $result = [];
+        $stmt = $this->database->connect()->prepare('
+            SELECT transactions.id_transaction, transactions.title, transactions.amount, categories.name
+            FROM transactions
+            INNER JOIN categories on categories.id_category = transactions.id_category
+        ');
+        $stmt->execute();
+        $transactions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($transactions as $transaction){
+            $result[]=new Transaction(
+                $transaction['title'],
+                $transaction['amount'],
+                $transaction['name']
+            );
+        }
+        return $result;
     }
 
 }
