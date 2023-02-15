@@ -12,11 +12,11 @@
                 <h1>Hi <?=$name?>!</h1>
                 <section class="budget">
                     <p>Current Budget:</p>
-                    <h2>$1000,00</h2>
+                    <h2>$<?=$balance?></h2>
                     <p class="income">Income:</p>
-                    <h2>+$1000,00</h2>
+                    <h2>$<?=$income?></h2>
                     <p class="expenses">Expenses:</p>
-                    <h2>-$1000,00</h2>
+                    <h2>$<?=$expenses?></h2>
                 </section>
                 <section class="transactions">
                     <p class="last-transactions">Last transactions</p>

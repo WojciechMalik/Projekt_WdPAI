@@ -20,19 +20,31 @@ class ProjectController extends AppController
         $transactions=$this->transactionRepository->getTransactions();
         $userRepository = new UserRepository();
         $user = $userRepository->getUsername($_COOKIE['id_user']);
-        $this->render('dashboard', ['name'=> $user,'transactions' =>$transactions]);
+        $balance = 0;
+        $income = 0;
+        $expenses = 0;
+
+        foreach ($transactions as $transaction){
+            $amount = $transaction->getAmount();
+            if($amount>=0){
+                $income+=$amount;
+            }else{
+                $expenses+=$amount;
+            }
+            $balance+=$amount;
+        }
+        $this->render('dashboard', ['name'=> $user,'transactions' =>$transactions, 'balance'=>$balance,
+            'income'=>$income, 'expenses'=> $expenses]);
     }
     public function addTransaction()
     {
-        if($this->isPost()){
 
+        if($this->isPost()) {
             $transaction = new Transaction($_POST['title'], $_POST['amount'], $_POST['category']);
             $this->transactionRepository->addTransaction($transaction);
-
-            return $this->render('dashboard', [
-                'transactions'=>$this->transactionRepository->getTransactions(),
-                'messages'=>$this->messages, 'transaction'=>$transaction]);
+            header('Location: dashboard');
         }
+
         $this->render('newtransaction', ['messages'=>$this->messages]);
     }
 }
