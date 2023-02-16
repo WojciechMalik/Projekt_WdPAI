@@ -19,6 +19,7 @@ class ProjectController extends AppController
     public function dashboard(){
         $transactions=$this->transactionRepository->getTransactions();
         $userRepository = new UserRepository();
+        if($_COOKIE['id_user'] === null) header("Location: /login");
         $user = $userRepository->getUsername($_COOKIE['id_user']);
         $balance = 0;
         $income = 0;

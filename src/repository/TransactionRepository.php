@@ -47,6 +47,9 @@ class TransactionRepository extends Repository
             case 'Transport':
                 $category_id = 4;
                 break;
+            case 'Income':
+                $category_id = 5;
+                break;
         }
 
         $stmt->execute([

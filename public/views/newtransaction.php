@@ -26,6 +26,7 @@
                 <option value = "Entertainment">Entertainment</option>
                 <option value = "Education">Education</option>
                 <option value = "Transport">Transport</option>
+                <option value = "Income">Income</option>
             </select><br><br>
 
             <label for="title">Title:</label>

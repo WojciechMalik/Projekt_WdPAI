@@ -41,26 +41,42 @@ class UserRepository extends Repository
     }
 
     public function addUser(User $user){
-        $stmt = $this->database->connect()->prepare('
-            INSERT INTO public.user_details (name, surname)
-            VALUES (?, ?)
-        ');
 
-        $stmt->execute([
-            $user->getName(),
-            $user->getSurname()
-        ]);
+        $connection = $this->database->connect();
 
-        $stmt = $this->database->connect()->prepare('
-            INSERT INTO public.users (email, password, id_user_details)
-            VALUES (?, ?, ?)
-        ');
+        $connection->beginTransaction();
 
-        $stmt->execute([
-            $user->getEmail(),
-            $user->getPassword(),
-            $this->getUserDetailsId($user)
-        ]);
+        try {
+
+            $stmt = $connection->prepare('
+                INSERT INTO public.user_details (name, surname)
+                VALUES (?, ?)
+            ');
+
+            $stmt->execute([
+                $user->getName(),
+                $user->getSurname()
+            ]);
+
+            $stmt = $connection->prepare('
+                INSERT INTO public.users (email, password, id_user_details)
+                VALUES (?, ?, ?)
+            ');
+
+            $stmt->execute([
+                $user->getEmail(),
+                $user->getPassword(),
+                $this->getUserDetailsId($user)
+            ]);
+
+            $connection->commit();
+
+        }catch(PDOException $e) {
+
+            $connection->rollBack();
+
+        }
+
     }
 
     public function getUserDetailsId(User $user): int{
