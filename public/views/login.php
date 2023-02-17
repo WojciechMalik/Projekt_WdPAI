@@ -31,6 +31,7 @@
             </form>
             <p>Don't have an account? <a href="registration">Sign Up</a></p>
         </div>
+        <img src="public/img//kropka.jpg" style="height: 800px; width: 600px" id="mem">
     </body>
 </html>
 

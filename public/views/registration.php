@@ -40,7 +40,9 @@
                 <button type="submit">Submit</button>
             </form>
             <p>Already have an account? <a href="login">Login</a></p>
+
         </div>
     </body>
+    <img src="public/img//kropka.jpg" style="height: 800px; width: 600px" id="mem">
 </html>
 
