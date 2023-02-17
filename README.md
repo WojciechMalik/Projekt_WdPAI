@@ -11,7 +11,7 @@ App provides user with many options such as tracking their current budget, month
 >- HTML
 >- CSS3
 >- PHP
->- Docket
+>- Docker
 >- PostgreSQL
->- JavaScript (with AJAX)
+>- JavaScript
 
