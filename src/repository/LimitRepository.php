@@ -4,17 +4,16 @@ require_once 'Repository.php';
 require_once __DIR__.'/../models/Limit.php';
 class LimitRepository extends Repository
 {
-    public function updateLimit(Limit $limit): void{
+    public function updateLimit(Limit $amount): void{
         $stmt=$this->database->getConnection()->prepare('
-            UPDATE public.user_limits
-            SET user_limits.limit= :limit
-            WHERE user_limits.id_user = :id_user AND user_limits.id_category = :id_category
-            VALUES (?, ?, ?)
+            UPDATE user_limits
+            SET amount= :amount
+            WHERE id_user = :id_user AND id_category = :id_category
         ');
-
-        $stmt->execute(['limit'=>$limit->getLimit(),
-            'id_user'=>$limit->getIdUser(),
-            'id_category'=>$limit->getIdCategory()]);
+        
+        $stmt->execute(['amount'=>$amount->getLimit(),
+            'id_user'=>$amount->getIdUser(),
+            'id_category'=>$amount->getIdCategory()]);
     }
 
     public function getLimits(): array{
@@ -32,7 +31,7 @@ class LimitRepository extends Repository
             $result[]=new Limit(
                 $limit['id_user'],
                 $limit['id_category'],
-                $limit['limit']
+                $limit['amount']
             );
         }
         return $result;

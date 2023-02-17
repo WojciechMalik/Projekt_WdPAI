@@ -18,6 +18,22 @@ class LimitController extends AppController
         $this->render('limits', ['limits'=>$limits]);
     }
 
+    public function setLimits(){
+        if(!$this->isPost()) die();
+        if($_POST['Food'])
+            $this->limitRepository->updateLimit(new Limit($_COOKIE['id_user'], 1, $_POST['Food']));
+
+        if($_POST['Entertainment'])
+            $this->limitRepository->updateLimit(new Limit($_COOKIE['id_user'], 2, $_POST['Entertainment']));
+
+        if($_POST['Education'])
+            $this->limitRepository->updateLimit(new Limit($_COOKIE['id_user'], 3, $_POST['Education']));
+
+        if($_POST['Transport'])
+            $this->limitRepository->updateLimit(new Limit($_COOKIE['id_user'], 4, $_POST['Transport']));
+
+        header("Location: /limits");
+    }
 
 
 

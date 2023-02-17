@@ -27,9 +27,9 @@ class Limit
     {
         $this->id_category = $id_category;
     }
-    public function getLimit()
+    public function getLimit(): float
     {
-        return $this->limit;
+        return (float)$this->limit;
     }
     public function setLimit($limit): void
     {

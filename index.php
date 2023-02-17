@@ -15,7 +15,7 @@ Router::get('newtransaction', 'DefaultController');
 //Router::get('registration', 'DefaultController');
 Router::get('logout', 'SecurityController');
 
-
+Router::post('setLimits', 'LimitController');
 Router::post('login', 'SecurityController');
 Router::post('addTransaction', 'ProjectController');
 Router::post('registration', 'SecurityController');
