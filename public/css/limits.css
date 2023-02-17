@@ -92,3 +92,52 @@ input{
     align-items: center;
     justify-content: center;
 }
+
+@media only screen and (max-device-width: 420px) {
+    main {
+        width: 100vw;
+        height: 85%;
+    }
+    form{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 10% 7.5% 7.5% 7.5% 7.5% 7.5%  7.5% 1fr;
+        margin: 0;
+        height: 100%;
+        align-items: center;
+    }
+    main h1{
+        align-self: start;
+        font-size: 4rem;
+    }
+    main p{
+        font-size: 2.5rem;
+    }
+    .name{
+        margin-right: 80px;
+    }
+    main h2{
+        font-size: 3rem;
+
+    }
+
+    input{
+        border: none;
+        border-bottom: 1px solid #969696;
+        font-size: 2.5rem;
+        width: 75%;
+    }
+
+
+    #save{
+        font-weight: 700;
+        font-size: 2.25rem;
+        width: 60%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    }
+
+}

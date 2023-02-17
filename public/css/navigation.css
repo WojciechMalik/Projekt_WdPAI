@@ -1,3 +1,7 @@
+h3{
+    display: none;
+}
+
 nav{
     border-radius: 0px 40px 40px 0px;
     width: 400px;
@@ -66,4 +70,70 @@ nav li:last-child button{
 li i{
     font-size: 1.5rem;
     margin-right: 1vw;
+}
+.mobile-helper{
+    display: none;
+}
+
+
+@media only screen and (max-device-width: 420px) {
+    h3 {
+        display: inline-block;
+        position: fixed;
+        top: 0px;
+        z-index: 10;
+        width: 100%;
+        height: 5%;
+        background-color: black;
+        color: white;
+        text-align: center;
+        font-size: 4.5rem;
+        margin: 0;
+        align-self: center;
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav li:last-child button {
+        margin-bottom: 0px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+
+    }
+
+    .mobile-helper {
+        display: flex;
+        flex-direction: row;
+        background-color: black;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 7.5%;
+        justify-content: space-evenly;
+
+    }
+
+    button {
+        justify-content: center;
+        text-align: center;
+        color: white;
+        font-size: 1.25rem;
+        border-radius: 0;
+        height: 100%;
+    }
+
+    button img{
+        width: 50px;
+        height: 50px;
+    }
+    .newtransaction{
+        justify-content: center;
+        background-color: #FFD702;
+        color: black;
+        text-align: center;
+    }
+
 }

@@ -68,11 +68,7 @@ input{
     width: 40%;
 }
 
-
-
-
 #save{
-
     margin-top: 2rem;
     background-color: #FFD702;
     color: black;
@@ -83,4 +79,41 @@ input{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+@media only screen and (max-device-width: 420px) {
+    main {
+        width: 100vw;
+        height: 85%;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 10% 1fr;
+        align-items: center;
+        margin: 0 2vw;
+    }
+    label{
+        font-size: 3rem;
+    }
+    select{
+        font-size: 2.5rem;
+    }
+    input{
+        font-size: 2.5rem;
+    }
+    #title{
+        width: 30rem;
+    }
+    #amount-text{
+        width: 15rem;
+    }
+    #save{
+        font-size: 2.25rem;
+        height: 7.5rem;
+        width: 12.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
 }
