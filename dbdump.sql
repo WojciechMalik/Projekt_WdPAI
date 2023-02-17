@@ -84,6 +84,12 @@ create table if not exists user_limits
             references categories,
     amount      double precision not null
 );
+create or replace view all_users(email, name, surname) as
+SELECT users.email,
+       user_details.name,
+       user_details.surname
+FROM user_details
+         JOIN users ON user_details.id_user_details = users.id_user_details;
 
 alter table user_limits
     owner to dbuser;
