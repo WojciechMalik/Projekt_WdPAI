@@ -19,20 +19,20 @@
 
                     <p class="food name">Food</p>
                     <p class="food current">$<?=$limits[0]->getLimit()?></p>
-                    <input placeholder="$" class="food new" name="Food">
+                    <input placeholder="$" class="food new" name="Food" type="number" step="0.01">
 
                     <p class="entertainment name">Entertainment</p>
                     <p class="entertainment current">$<?=$limits[1]->getLimit()?></p>
-                    <input placeholder="$" class="entertainment new" name="Entertainment">
+                    <input placeholder="$" class="entertainment new" name="Entertainment" type="number" step="0.01">
 
                     <p class="education name">Education</p>
                     <p class="education current">$<?=$limits[2]->getLimit()?></p>
-                    <input placeholder="$" class="education new" name="Education">
+                    <input placeholder="$" class="education new" name="Education" type="number" step="0.01">
 
 
                     <p class="transport name">Transport</p>
                     <p class="transport current">$<?=$limits[3]->getLimit()?></p>
-                    <input placeholder="$" class="transport new" name="Transport">
+                    <input placeholder="$" class="transport new" name="Transport" type="number" step="0.01">
 
                     <button type="submit" id="save">Save</button>
                 </form>
