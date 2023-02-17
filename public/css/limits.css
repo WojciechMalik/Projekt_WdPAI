@@ -15,49 +15,22 @@ body{
 main {
     width: 76vw;
     height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 12.5% 12.5% 75%;
-    align-items: center;
     margin: 0 2vw;
 }
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 12.5% 12.5% 10% 10% 10% 10% 10% 25%;
+    margin: 0;
+    height: 100%;
+    align-items: center;
+}
 
-main h1{
+form h1{
     align-self: center;
     font-size: 4rem;
     grid-area: 1 / 1 / 2 / 4;
 }
-
-form{
-    grid-area: 3/1/4/4;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 15% 15% 15% 15% 40%;
-    align-self: start;
-}
-
-.limit-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.food{
-    grid-area: 1/1/2/4;
-}
-
-.entertainment{
-    grid-area: 2/1/3/4;
-}
-
-.education{
-    grid-area: 3/1/4/4;
-}
-
-.transport{
-    grid-area: 4/1/5/4;
-}
-
 h2{
     font-size: 2rem;
 }
@@ -74,9 +47,29 @@ h2{
     grid-area: 2/3/3/4;
 }
 
-name{
+.food{
+    grid-row: 3/4;
+}
+.entertainment{
+    grid-row: 4/5;
+}
+.education{
+    grid-row: 5/6;
+}
+.transport{
+    grid-row: 6/7;
+}
+
+.name{
     grid-column: 1/2;
 }
+.current{
+    grid-column: 2/3;
+}
+.new{
+    grid-column: 3/4;
+}
+
 p{
     font-size: 1.5rem;
 }
@@ -94,7 +87,7 @@ input{
     border-radius: 20px;
     font-weight: 700;
     font-size: 1.25rem;
-    width: 25%;
+    width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
