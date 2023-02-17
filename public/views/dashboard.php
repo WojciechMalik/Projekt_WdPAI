@@ -32,7 +32,15 @@
                         <?php endforeach; ?>
                     </ul>
                 </section>
-                <img src="public/img/stonks.jpg" alt="stonks or not stonks">
+                <?php if($balance>0): ?>
+                    <img src="public/img/stonks.png" alt="stonks" style="width: 600px; height: 600px; border-radius: 20px">
+                <?php endif; ?>
+                <?php if($balance==0): ?>
+                    <img src="public/img/confused-stonks.jpg" alt="stonks" style="width: 600px; height: 600px; border-radius: 20px">
+                <?php endif; ?>
+                <?php if($balance<0): ?>
+                    <img src="public/img/not-stonks.jpeg" alt="stonks" style="width: 600px; height: 600px; border-radius: 20px">
+                <?php endif; ?>
             </main>
         </div>
     </body>
