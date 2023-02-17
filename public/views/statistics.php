@@ -16,7 +16,7 @@
             <h2 id="h2">Progress</h2>
 
             <p class="food name">Food</p>
-            <meter class="food progress-c" value="<?=$per_food?>" max="100" high="75"></meter>
+            <meter class="food progress-c" value="<?=$per_food?>" max="100" high="75" low="25"></meter>
             <p class="food percentage"><?=$per_food?>%</p>
 
             <p class="entertainment name">Entertainment</p>

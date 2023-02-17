@@ -45,7 +45,6 @@ class SecurityController extends AppController
         if (!$this->isPost()) {
             return $this->render('registration');
         }
-        print_r($_POST);
 
         $email = $_POST['email'];
         $password = $_POST['password'];

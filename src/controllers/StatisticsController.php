@@ -27,10 +27,10 @@ class StatisticsController extends AppController
                 case "Food":
                     $food += ($transaction->getAmount()*-1);
                     break;
-                case "Education":
+                case "Entertainment":
                     $entertainment += ($transaction->getAmount()*-1);
                     break;
-                case "Entertainment":
+                case "Education":
                     $education += ($transaction->getAmount()*-1);
                     break;
                 case "Transport":

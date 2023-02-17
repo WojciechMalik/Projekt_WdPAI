@@ -42,7 +42,8 @@
             <p>Already have an account? <a href="login">Login</a></p>
 
         </div>
+        <img src="public/img//kropka.jpg" style="height: 800px; width: 600px" id="mem">
     </body>
-    <img src="public/img//kropka.jpg" style="height: 800px; width: 600px" id="mem">
+
 </html>
 

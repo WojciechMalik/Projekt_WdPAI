@@ -34,17 +34,22 @@ class TransactionRepository extends Repository
         ');
 
         $pom = $transaction->getCategory();
+        $pom2 =$transaction->getAmount();
         switch ($pom){
             case 'Food':
                 $category_id = 1;
+                $pom2 *=-1;
                 break;
             case 'Entertainment':
                 $category_id = 2;
+                $pom2 *=-1;
                 break;
             case 'Education':
                 $category_id = 3;
+                $pom2 *=-1;
                 break;
             case 'Transport':
+                $pom2 *=-1;
                 $category_id = 4;
                 break;
             case 'Income':
@@ -52,8 +57,9 @@ class TransactionRepository extends Repository
                 break;
         }
 
+
         $stmt->execute([
-            $transaction->getAmount(),
+            $pom2,
             $transaction->getTitle(),
             $category_id,
             $_COOKIE['id_user']
