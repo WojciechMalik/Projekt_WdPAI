@@ -9,14 +9,14 @@
     <body>
         <div class="container">
             <h1>Welcome to <span><br/>On</span>Budget!</h1>
-            <form action="registration" method="POST">
-                <?php
-                if(isset($messages)){
-                    foreach($messages as $message) {
-                        echo $message;
-                    }
+            <?php
+            if(isset($messages)){
+                foreach($messages as $message) {
+                    echo $message;
                 }
-                ?>
+            }
+            ?>
+            <form action="registration" method="POST">
                 <div class="input-container">
                     <img src="public/img/mail-icon.svg" height="20" width="20">
                     <input name="email" type="text" placeholder="Mail">
@@ -37,7 +37,7 @@
                     <img src="public/img/username-icon.svg" height="20" width="20">
                     <input name="surname" type="text" placeholder="Surname">
                 </div>
-                <button>Submit</button>
+                <button type="submit">Submit</button>
             </form>
             <p>Already have an account? <a href="login">Login</a></p>
         </div>

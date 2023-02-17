@@ -4,6 +4,7 @@
     <title>OnBudget | New Transaction</title>
     <link rel="icon" href="public/img/favicon.svg">
     <link rel="stylesheet" type="text/css" href="public/css/newtransaction.css">
+    <link rel="stylesheet" type="text/css" href="public/css/navigation.css">
     <?php include "header.php" ?>
 </head>
 <body>

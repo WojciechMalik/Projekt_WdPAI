@@ -5,7 +5,7 @@ require_once __DIR__.'/../models/Limit.php';
 class LimitRepository extends Repository
 {
     public function updateLimit(Limit $limit): void{
-        $stmt=$this->database->connect()->prepare('
+        $stmt=$this->database->getConnection()->prepare('
             UPDATE public.user_limits
             SET user_limits.limit= :limit
             WHERE user_limits.id_user = :id_user AND user_limits.id_category = :id_category
@@ -20,8 +20,8 @@ class LimitRepository extends Repository
     public function getLimits(): array{
         $result = [];
         $ciastko = $_COOKIE['id_user'];
-        $stmt = $this->database->connect()->prepare('
-            SELECT user_limits.id_user, user_limits.id_category, user_limits.limit
+        $stmt = $this->database->getConnection()->prepare('
+            SELECT user_limits.id_user, user_limits.id_category, user_limits.amount
             FROM user_limits
             WHERE user_limits.id_user = :ciastko
         ');

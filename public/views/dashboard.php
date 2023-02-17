@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <title>OnBudget | Dashboard</title>
+        <link rel="stylesheet" type="text/css" href="public/css/navigation.css">
         <link rel="stylesheet" type="text/css" href="public/css/dashboard.css">
         <?php include "header.php" ?>
     </head>

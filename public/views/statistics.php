@@ -3,6 +3,7 @@
   <head>
       <title>OnBudget | Statistics</title>
       <link rel="icon" href="public/img/favicon.svg">
+      <link rel="stylesheet" type="text/css" href="public/css/navigation.css">
       <link rel="stylesheet" type="text/css" href="public/css/statistics.css">
       <?php include "header.php" ?>
   </head>

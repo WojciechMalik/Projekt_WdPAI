@@ -6,7 +6,7 @@ class UserRepository extends Repository
 {
 
     public function getUsername(int $id): ?string{
-        $stmt = $this->database->connect()->prepare('
+        $stmt = $this->database->getConnection()->prepare('
             SELECT name FROM public.user_details
             WHERE id_user_details = (SELECT id_user_details FROM public.users WHERE id_user=:id)
         ');
@@ -14,10 +14,19 @@ class UserRepository extends Repository
         $stmt->execute(['id'=>$id]);
         $username = $stmt->fetch(PDO::FETCH_ASSOC);
         return $username['name'];
+    }
 
+    public function getUserID(string $mail) : int{
+        $stmt = $this->database->getConnection()->prepare('
+            SELECT id_user FROM public.users
+            WHERE email = :mail
+        ');
+        $stmt->execute(['mail'=>$mail]);
+        $id = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $id['id_user'];
     }
     public function getUser(string $email): ?User{
-        $stmt = $this->database->connect()->prepare('
+        $stmt = $this->database->getConnection()->prepare('
             SELECT * FROM public.users u LEFT JOIN public.user_details ud
             ON u.id_user_details = ud.id_user_details WHERE email = :email
         ');
@@ -42,14 +51,12 @@ class UserRepository extends Repository
 
     public function addUser(User $user){
 
-        $connection = $this->database->connect();
-
-        $connection->beginTransaction();
+        $this->database->getConnection()->beginTransaction();
 
         try {
 
-            $stmt = $connection->prepare('
-                INSERT INTO public.user_details (name, surname)
+            $stmt = $this->database->getConnection()->prepare('
+                INSERT INTO user_details (name, surname)
                 VALUES (?, ?)
             ');
 
@@ -58,8 +65,8 @@ class UserRepository extends Repository
                 $user->getSurname()
             ]);
 
-            $stmt = $connection->prepare('
-                INSERT INTO public.users (email, password, id_user_details)
+            $stmt = $this->database->getConnection()->prepare('
+                INSERT INTO users (email, password, id_user_details)
                 VALUES (?, ?, ?)
             ');
 
@@ -69,18 +76,29 @@ class UserRepository extends Repository
                 $this->getUserDetailsId($user)
             ]);
 
-            $connection->commit();
+            $stmt = $this->database->getConnection()->prepare('
+                    INSERT INTO user_limits (id_user, id_category, amount)
+                    VALUES (?, ?, ?)
+                ');
+            foreach ([1, 2, 3, 4] as $i) {
 
+
+                $stmt->execute([
+                    $this->getUserID($user->getEmail()),
+                    $i,
+                    0
+                ]);
+            }
+
+            $this->database->getConnection()->commit();
         }catch(PDOException $e) {
-
-            $connection->rollBack();
-
+            $this->database->getConnection()->rollBack();
         }
 
     }
 
     public function getUserDetailsId(User $user): int{
-        $stmt = $this->database->connect()->prepare('
+        $stmt = $this->database->getConnection()->prepare('
             SELECT * FROM public.user_details WHERE name = :name AND surname = :surname
         ');
         $nam = $user->getName();

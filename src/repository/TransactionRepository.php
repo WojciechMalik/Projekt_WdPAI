@@ -5,7 +5,7 @@ require_once __DIR__.'/../models/Transaction.php';
 class TransactionRepository extends Repository
 {
     public function getTransaction(int $id): ?Transaction{
-        $stmt = $this->database->connect()->prepare('
+        $stmt = $this->database->getConnection()->prepare('
             SELECT transactions.id_transaction, transactions.title, transactions.amount, categories.name
             FROM transactions
             INNER JOIN categories on categories.id_category = transactions.id_category
@@ -28,7 +28,7 @@ class TransactionRepository extends Repository
         );
     }
     public function addTransaction(Transaction $transaction): void{
-        $stmt=$this->database->connect()->prepare('
+        $stmt=$this->database->getConnection()->prepare('
             INSERT INTO transactions (amount, title, id_category, id_user)
             VALUES (?, ?, ?, ?)
         ');
@@ -63,7 +63,7 @@ class TransactionRepository extends Repository
     public function getTransactions(): array{
         $result = [];
         $ciastko = $_COOKIE['id_user'];
-        $stmt = $this->database->connect()->prepare('
+        $stmt = $this->database->getConnection()->prepare('
             SELECT transactions.id_transaction, transactions.title, transactions.amount, categories.name
             FROM transactions
             INNER JOIN categories on categories.id_category = transactions.id_category
