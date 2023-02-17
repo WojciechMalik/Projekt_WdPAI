@@ -16,20 +16,20 @@
             <h2 id="h2">Progress</h2>
 
             <p class="food name">Food</p>
-            <meter class="food progress-c" value="80" max="100" high="75"></meter>
-            <p class="food percentage">80%</p>
+            <meter class="food progress-c" value="<?=$per_food?>" max="100" high="75"></meter>
+            <p class="food percentage"><?=$per_food?>%</p>
 
             <p class="entertainment name">Entertainment</p>
-            <meter class="entertainment progress-c" value="90" max="100" high="75"></meter>
-            <p class="entertainment percentage">90%</p>
+            <meter class="entertainment progress-c" value="<?=$per_enter?>" max="100" high="75"></meter>
+            <p class="entertainment percentage"><?=$per_enter?>%</p>
 
             <p class="education name">Education</p>
-            <meter id="zz" class="education progress-c" value="20" max="100" high="75"></meter>
-            <p class="education percentage">20%</p>
+            <meter id="zz" class="education progress-c" value="<?=$per_edu?>" max="100" high="75"></meter>
+            <p class="education percentage"><?=$per_edu?>%</p>
 
             <p class="transport name">Transport</p>
-            <meter class="transport progress-c" value="70" max="100" high="75"></meter>
-            <p class="transport percentage">70%</p>
+            <meter class="transport progress-c" value="<?=$per_trans?>" max="100" high="75"></meter>
+            <p class="transport percentage"><?=$per_trans?>%</p>
 
         </main>
     </div>

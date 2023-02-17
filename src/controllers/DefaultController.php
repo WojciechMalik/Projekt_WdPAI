@@ -6,10 +6,6 @@ class DefaultController extends AppController {
         $this->render('login');
     }
 
-    public function statistics(){
-        if($_COOKIE['id_user'] === null) header("Location: /login");
-        $this->render('statistics');
-    }
 
     public function newtransaction(){
         if($_COOKIE['id_user'] === null) header("Location: /login");
