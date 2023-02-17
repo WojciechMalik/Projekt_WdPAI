@@ -16,21 +16,21 @@
                 <h2 id="h3">New</h2>
 
                 <p class="food name">Food</p>
-                <p class="food current">$xx</p>
-                <input value="$" class="food new">
+                <p class="food current">$<?=$limits[0]->getLimit()?></p>
+                <input placeholder="$" class="food new" name="Food">
 
                 <p class="entertainment name">Entertainment</p>
-                <p class="entertainment current">$xx</p>
-                <input value="$" class="entertainment new">
+                <p class="entertainment current">$<?=$limits[1]->getLimit()?></p>
+                <input placeholder="$" class="entertainment new" name="Entertainment">
 
                 <p class="education name">Education</p>
-                <p class="education current">$xx</p>
-                <input value="$" class="education new">
+                <p class="education current">$<?=$limits[2]->getLimit()?></p>
+                <input placeholder="$" class="education new" name="Education">
 
                 <p class="transport name">Transport</p>
-                <p class="transport current">$xx</p>
-                <input value="$" class="transport new">
-                <button type="button" id="save">Save</button>
+                <p class="transport current">$<?=$limits[3]->getLimit()?></p>
+                <input placeholder="$" class="transport new" name="Transport">
+                <button type="submit" id="save">Save</button>
             </main>
 
         </div>

@@ -10,14 +10,12 @@ class DefaultController extends AppController {
         if($_COOKIE['id_user'] === null) header("Location: /login");
         $this->render('statistics');
     }
-    public function limits(){
-        if($_COOKIE['id_user'] === null) header("Location: /login");
-        $this->render('limits');
-    }
+
     public function newtransaction(){
         if($_COOKIE['id_user'] === null) header("Location: /login");
         $this->render('newtransaction');
     }
+
     public function registration(){
         $this->render('registration');
     }
