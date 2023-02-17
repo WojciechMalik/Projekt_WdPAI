@@ -21,7 +21,7 @@ class SecurityController extends AppController
         }
 
         $email = $_POST['email'];
-        $password = md5($_POST['password']);
+        $password = sha1($_POST['password']);
 
         $user = $this->userRepository->getUser($email);
 
@@ -55,7 +55,7 @@ class SecurityController extends AppController
         if ($password !== $confirmedPassword) {
             return $this->render('registration', ['messages' => ['Please provide proper password']]);
         }
-        $user = new User($email, md5($password), $name, $surname);
+        $user = new User($email, sha1($password), $name, $surname);
         $this->userRepository->addUser($user);
 
         return $this->render('login', ['messages' => ['You\'ve been successfully registered!']]);
