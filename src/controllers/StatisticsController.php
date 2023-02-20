@@ -45,10 +45,22 @@ class StatisticsController extends AppController
         $lim_edu = $limits[2]->getLimit();
         $lim_trans = $limits[3]->getLimit();
 
-        $per_food = $food/$lim_food *100;
-        $per_enter = $entertainment/$lim_enter *100;
-        $per_edu = $education/$lim_edu *100;
-        $per_trans = $transport/$lim_trans *100;
+        if($lim_food!=0)
+            $per_food = $food/$lim_food *100;
+        else
+            $per_food = 0;
+        if($lim_food!=0)
+            $per_enter = $entertainment/$lim_enter *100;
+        else
+            $per_enter=0;
+        if($lim_edu!=0)
+            $per_edu = $education/$lim_edu *100;
+        else
+            $per_edu = 0;
+        if($lim_trans!=0)
+            $per_trans = $transport/$lim_trans *100;
+        else
+            $per_trans=0;
 
         $this->render('statistics', ['per_food'=>$per_food,
             'per_enter'=>$per_enter,
